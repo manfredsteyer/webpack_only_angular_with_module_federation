@@ -70,9 +70,9 @@ module.exports = {
             },
 
             shared: {
-                "@angular/core": { singleton: true, strictVersion: true },
-                "@angular/common": { singleton: true, strictVersion: true },
-                "@angular/router": { singleton: true, strictVersion: true },
+                "@angular/core": { singleton: true, eager: true },
+                "@angular/common": { singleton: true, eager: true },
+                "@angular/router": { singleton: true, eager: true },
 
                 // Uncomment for sharing lib of an Angular CLI or Nx workspace
               //  ...sharedMappings.getDescriptors()

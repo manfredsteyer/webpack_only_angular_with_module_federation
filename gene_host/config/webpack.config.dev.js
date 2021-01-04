@@ -11,7 +11,8 @@ module.exports = merge(commonConfig, {
         port: 8080,
         publicPath: '/',
         historyApiFallback: true,
-        stats: 'minimal'
+        stats: 'minimal',
+        hot:true
     },
     devtool: 'source-map',
 
