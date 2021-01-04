@@ -1,0 +1,51 @@
+{
+  "name": "gene_host",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack-dev": "cross-env NODE_ENV=development webpack --mode development",
+    "webpack-prod": "cross-env NODE_ENV=production webpack --mode production",
+    "build:dev": "webpack serve --mode=development --config ./config/webpack.config.dev.js",
+    "build:prod": "npm run build:clean && ngc && npm run webpack-prod && npm run build:clean",
+    "build:clean": "del-cli 'src/**/*.js' 'src/**/*.js.map' 'src/**/*.ngsummary.json' 'src/**/*.metadata.json' 'src/**/**/*.ngfactory.ts' 'src/**/*.ngstyle.ts' 'src/**/*.shim.ts'"
+  },
+  "author": "Ahammad Ali",
+  "license": "MIT",
+  "dependencies": {
+    "@angular-architects/module-federation": "^1.2.2",
+    "@angular/animations": "^11.0.5",
+    "@angular/common": "^11.0.5",
+    "@angular/compiler": "^11.0.5",
+    "@angular/compiler-cli": "^11.0.5",
+    "@angular/core": "^11.0.5",
+    "@angular/forms": "^11.0.5",
+    "@angular/http": "^7.2.16",
+    "@angular/platform-browser": "^11.0.5",
+    "@angular/platform-browser-dynamic": "^11.0.5",
+    "@angular/platform-server": "^11.0.5",
+    "@angular/router": "^11.0.5",
+    "core-js": "^3.8.1",
+    "rxjs": "^6.6.3",
+    "zone.js": "^0.11.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.19",
+    "angular-router-loader": "^0.8.5",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.1",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "typescript": "4.0.3",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-merge": "^5.7.3"
+  }
+}
