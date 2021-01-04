@@ -12,4 +12,4 @@
 3. `npm run build:dev`
 
 
-! [app structure](https://github.com/AhammadAliPK/angular-microfrontend/blob/main/geneimg.png)
+! [app structure](./geneimg.png)
