@@ -65,9 +65,9 @@ module.exports = {
         new ModuleFederationPlugin({
 
             // For hosts (please adjust)
-            remotes: {
-                 "gene_remote": "gene_remote@http://localhost:8081/remoteEntry.js",
-            },
+            // remotes: {
+            //      "gene_remote": "gene_remote@http://localhost:8081/remoteEntry.js",
+            // },
 
             shared: {
                 "@angular/core": { singleton: true, eager: true },

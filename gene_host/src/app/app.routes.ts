@@ -22,13 +22,18 @@ export const APP_ROUTES: Routes = [
   {
     path: 'flights',
     // loadChildren: () => import('mfe1/Module').then(m => m.FlightsModule)
-    loadChildren: () =>
+    loadChildren: () => 
       loadRemoteModule({
-        // remoteEntry: 'http://localhost:3000/remoteEntry.js',
+        // we need to load the remoteEntry somewhere,
+        // either here or in main.ts before dynamically importing
+        // a bootstrap.ts calling bootstrapModule(AppModule)
+        // See "Improvement for Dynamic Module Federation" here: 
+        //  https://www.angulararchitects.io/aktuelles/dynamic-module-federation-with-angular/
+        remoteEntry: 'http://localhost:8081/remoteEntry.js',
         remoteName: 'gene_remote',
         exposedModule: './Module'
       })
-      .then(m => m.FlightsModule)
+      .then(m => m.FlightsModule);
 
   },
 

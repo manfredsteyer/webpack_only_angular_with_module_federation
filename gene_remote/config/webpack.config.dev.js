@@ -17,7 +17,14 @@ module.exports = merge(commonConfig, {
 
     output: {
         path: helpers.root('dist'),
-        publicPath: '/',
+        // For Module Federation, it's best to skip the public path or to set it to an absolute path
+        // All your paths are prefixed with it.
+        // If we used / all the paths of the remote bundles are prefixed with it leading to
+        // /myBundle.js. If the shell located at localhost:8080 loads such a bundle it expects
+        // it at localhost:8080/myBundle.js while it's at localhost:808*1*/myBundle.js.
+        // If you skip it, module federation prefixes it with the location the remoteEntry
+        // came from leading to localhost:808*1*/myBundle.js in our case.
+        // publicPath: '/',
         filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js'
     },
